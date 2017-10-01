@@ -1,17 +1,17 @@
 import java.util.Random;
 
 
-public class Mylist {
-private int [] list;
+public class Mylist<T>{
+private T [] list;
 int size;
 public Mylist(){
 	size = 0;
 	
-	list = new int[0];
+	list = (T[])new Object[size];
 }
 
-public void add(int i){
-     int[] newList = new int[size + 1];
+public void add(T i){
+     T[] newList = (T[])new Object[size + 1];
 	for (int j = 0; j < list.length; j++) {
 		newList[j] = list[j];
 	}
@@ -20,15 +20,19 @@ public void add(int i){
 	size += 1;
 }
 
-public int remove(int j){
-	int[] newaddList = new int[size - 1];
-	int val = list[j];
+public T remove(int j) throws Exception{
+	if (j < 0 || j > list.length) {
+		throw new Exception("To big or small");
+	}
+	T[] newaddList = (T[])new Object[size - 1];
+	T val = list[j];
 	for (int i = 0; i < j; i++) {
 		newaddList[i] = list[i];
 	}
 	for (int i = j+1; i < newaddList.length+1; i++) {
 		newaddList[i-1] = list[i];
 	}
+	
 	list = newaddList;
 	size -= 1;
 	return val;
@@ -43,9 +47,10 @@ public int size(){
 	return size;
 }
 
-public int get(int e){
+public T get(int e)throws Exception{
 	if(e < 0 || e > size - 1){
-		System.out.println("can't use that number");
+		//System.out.println("can't use that number");
+		throw new Exception("can't use that number");
 	}
 
 		return list[e];
@@ -53,25 +58,31 @@ public int get(int e){
 	
 }
 public static void main(String[] args) {
-	Mylist m = new Mylist();
-	m.add(3);
-	m.add(2);
-	m.add(3);
-	m.add(2);
-	m.add(3);
-	m.add(2);
-	m.add(3);
-	m.add(2);
+	Mylist <String> m = new Mylist<String>();
+	m.add("Hi");
+	m.add("Boi");
+	m.add("Dad");
 	
-for (int i = 0; i < 4; i++) {
 	
 
-	m.remove(0);
+	
+	try {
+		System.out.println(m.get(7));
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	System.out.println(m.size());
+	try {
+		m.remove(7);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	m.print();
-	System.out.println();
+	
 }
-	//System.out.println(m.size);
-	//
+	
 }
 
-}
+
