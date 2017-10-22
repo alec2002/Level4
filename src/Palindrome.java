@@ -16,21 +16,19 @@ String reverseString(String s){
 	for (int i = s.length()-1; i >= 0; i--) {
 		newString += s.charAt(i);
 	}
-	System.out.println(newString);
+	//System.out.println(newString);
 	return newString;
 	
 }
 String removeSpaces(String s){
 	String withoughtSpaces = "";
-	for (int i = s.length()-1; i > 0; i--) {
-		if (s.charAt(i) != ' ') {
+	for (int i = 0; i < s.length(); i++) {
+		if (s.charAt(i) != ' ' && s.charAt(i) != ',' && s.charAt(i) != '!') {
 			withoughtSpaces += s.charAt(i);
 		}
 	}
+	System.out.println(withoughtSpaces);
 	return withoughtSpaces;
 }
-String removeSpecialCharacters(String s){
-	String withoughtSpeccharacters = "";
-	
-}
+
 }

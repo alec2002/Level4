@@ -46,33 +46,33 @@ public class Palindromes {
 		assertTrue(instance.isPalindrome("A Man, A Plan, A Canal, Panama!"));
 	}
 	
-//	@Test
-//	public void testIsPalindromeSentence2() {
-//		assertFalse(instance.isPalindrome("semordnilaps or palindromes"));
-//	}
-//	
-//	@Test
-//	public void testIsPalindromeFromDictionaryWords() throws Exception {
-//		// Set up
-//		final MessageDigest md5 = MessageDigest.getInstance("md5");
-//		final URL url = new URL(
-//			"https://raw.githubusercontent.com/eneko/data-repository/master/data/words.txt"
-//		);
-//		final BufferedReader reader = new BufferedReader(
-//			new InputStreamReader(url.openStream())
-//		);
-//		
-//		// Test
-//		reader.lines().
-//		filter(instance::isPalindrome).
-//		forEach(line -> md5.update(line.getBytes()));
-//		final byte[] actualMd5 = md5.digest();
-//		
-//		// Verify
-//		final byte[] expectedMd5 = new byte[] {
-//			74, -42, 100, -109, -98, -49, -41, 17, 90, 114, -66, 51, 36, -54, 34, -80
-//		};
-//		assertTrue(Arrays.equals(expectedMd5, actualMd5));
-//	}
+	@Test
+	public void testIsPalindromeSentence2() {
+		assertFalse(instance.isPalindrome("semordnilaps or palindromes"));
+	}
+	
+	@Test
+	public void testIsPalindromeFromDictionaryWords() throws Exception {
+		// Set up
+		final MessageDigest md5 = MessageDigest.getInstance("md5");
+		final URL url = new URL(
+			"https://raw.githubusercontent.com/eneko/data-repository/master/data/words.txt"
+		);
+		final BufferedReader reader = new BufferedReader(
+			new InputStreamReader(url.openStream())
+		);
+		
+		// Test
+		reader.lines().
+		filter(instance::isPalindrome).
+		forEach(line -> md5.update(line.getBytes()));
+		final byte[] actualMd5 = md5.digest();
+		
+		// Verify
+		final byte[] expectedMd5 = new byte[] {
+			74, -42, 100, -109, -98, -49, -41, 17, 90, 114, -66, 51, 36, -54, 34, -80
+		};
+		assertTrue(Arrays.equals(expectedMd5, actualMd5));
+	}
 }
 
