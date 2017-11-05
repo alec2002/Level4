@@ -14,6 +14,10 @@ public Doctor(String string) {
 public Doctor(){
 	
 }
+public Doctor(String string, Hospital aHospital) {
+	
+}
+
 public boolean performsSurgery(){
 	return false;
 }
@@ -47,6 +51,11 @@ public Object isEvil() {
 }
 public void joinTheDarkSide() {
 	isEvil = true;
+	
+}
+
+public Object getHospital() {
+	
 	
 }
 }

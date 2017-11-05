@@ -189,20 +189,20 @@ public class HospitalTest extends TestCase {
 	 assertEquals(true, luckyPatient.isAlive());
 	 }
 	
-	// /* Add a new constructor to Doctor that makes use of the other using
-	// "this()" */
-	// public void testDoctorConstructors() throws Exception {
-	// Hospital aHospital = new Hospital();
-	// Doctor doctor = new Doctor("1", aHospital);
-	// assertEquals(aHospital, doctor.getHospital());
-	// }
-	//
-	// public void testZombieConstructor() throws Exception {
-	// Zombie zombie = new Zombie("June 1st");
-	// assertEquals("June 1st", zombie.getTimeOfDeath());
-	// }
-	//
-	// /*
+	 /* Add a new constructor to Doctor that makes use of the other using
+	 "this()" */
+	 public void testDoctorConstructors() throws Exception {
+	 Hospital aHospital = new Hospital();
+	 Doctor doctor = new Doctor("1", aHospital);
+	 assertEquals(aHospital, doctor.getHospital());
+	 }
+	
+	 public void testZombieConstructor() throws Exception {
+	 Zombie zombie = new Zombie("June 1st");
+	 assertEquals("June 1st", zombie.getTimeOfDeath());
+	 }
+	
+	 /*
 	// * When a patient is killed they move from the Patient list to the Zombie
 	// list.
 	// * This will give you the current date and time: new Date().toString()
