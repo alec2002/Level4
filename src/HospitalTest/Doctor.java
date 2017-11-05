@@ -6,7 +6,9 @@ public class Doctor {
 ArrayList<Patient> patients = new ArrayList<Patient>();
 private boolean isEvil = false;
 public Doctor(String string) {
-	// TODO Auto-generated constructor stub
+	if(string == "666"){
+		isEvil = true;
+	}
 }
 
 public Doctor(){
