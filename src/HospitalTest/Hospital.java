@@ -7,9 +7,11 @@ public class Hospital {
 	int ctr = 0;
 	ArrayList<Doctor> doctors;
 	 ArrayList<Patient> patients;
+	 ArrayList<Zombie> zombie;
 Hospital(){
 doctors = new ArrayList<Doctor>();
 patients = new ArrayList<Patient>();
+zombie = new ArrayList<Zombie>();
 }
 public void addDoctor(Doctor d){
 	doctors.add(d);
@@ -36,7 +38,15 @@ public void assignPatientsToDoctors() throws DoctorFullException {
 		}
 		ctr ++;
 	}
-	
+	for (int i = 0; i < patients.size(); i ++) {
+		if (patients.get(i).isAlive().equals(true)) {
+			//create new zombie object, add new object to zombie list
+			zombie.add()
+			zombie.add(patients.get(i));
+			patients.remove(i);
+			
+		}
+	}
 }
 public void add(Doctor doctor) {
 	doctors.add(doctor);
